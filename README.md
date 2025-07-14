@@ -1,6 +1,3 @@
-# Ethical-hacking-lab-series
-Hands-on network security labs covering enumeration, exploitation (EternalBlue, buffer overflows), malware analysis, web app testing, compliance scanning, and SIEM monitoring — using tools like Nmap, Metasploit, Burp Suite, SQLMap, Cuckoo Sandbox, and Wazuh.
-
 # 🔐 Network Security Labs – A Comprehensive Cybersecurity Simulation
 
 This repository presents a broad collection of practical labs simulating real-world cybersecurity scenarios, executed within a controlled and isolated virtual environment. The work spans multiple security domains, from enumeration and exploitation to malware analysis, compliance scanning, and SIEM integration—reflecting the complete lifecycle of a professional red team/blue team engagement.

